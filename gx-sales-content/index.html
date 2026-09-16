@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GX営業コンテンツ 営業教材｜個別相談スライド</title>
+<style>
+:root{
+  --navy:#101F5A;
+  --gold:#B88A32;
+  --red:#A82024;
+  --ivory:#F7F4EC;
+  --text:#20242C;
+  --navy-soft:#1c2d74;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;height:100%;}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic",Meiryo,sans-serif;
+  background:#3a3f4b;
+  color:var(--text);
+  -webkit-text-size-adjust:100%;
+}
+
+/* ==== Top bar ==== */
+.topbar{
+  position:fixed;top:0;left:0;right:0;height:6px;
+  background:rgba(255,255,255,.15);
+  z-index:50;
+}
+.topbar-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--gold),var(--red));
+  width:4.5%;
+  transition:width .35s ease;
+}
+
+/* ==== Deck ==== */
+.app{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:22px 12px 90px;
+}
+.deck-frame{
+  width:100%;
+  max-width:1180px;
+}
+@media(max-width:600px){
+  .app{padding:10px 4px 84px;}
+}
+.deck{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  background:var(--navy);
+  overflow:hidden;
+  border-radius:8px;
+  box-shadow:0 18px 50px rgba(0,0,0,.45);
+}
+.slides-track{
+  display:flex;
+  height:100%;
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  will-change:transform;
+}
+.slide{
+  flex:0 0 100%;
+  height:100%;
+  overflow-y:auto;
+  background:var(--ivory);
+  position:relative;
+}
+.slide-inner{
+  min-height:100%;
+  padding:clamp(20px,4vw,56px) clamp(22px,5.5vw,72px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:clamp(10px,1.6vw,18px);
+}
+.slide::-webkit-scrollbar{width:8px;}
+.slide::-webkit-scrollbar-thumb{background:#c9bfa4;border-radius:4px;}
+.slide > .notes{display:none;}
+
+/* ==== Typography ==== */
+.eyebrow{
+  display:inline-block;
+  color:var(--gold);
+  font-weight:700;
+  font-size:clamp(.68rem,1.3vw,.85rem);
+  letter-spacing:.14em;
+  border-bottom:2px solid var(--gold);
+  padding-bottom:4px;
+  margin-bottom:4px;
+}
+h1.slide-title{
+  margin:0;
+  color:var(--navy);
+  font-size:clamp(1.25rem,3.1vw,2.35rem);
+  line-height:1.35;
+  font-weight:800;
+}
+h2.slide-sub{
+  margin:0;
+  color:var(--red);
+  font-size:clamp(.85rem,1.7vw,1.15rem);
+  font-weight:700;
+}
+p.lead{
+  font-size:clamp(.82rem,1.6vw,1.05rem);
+  color:#333;
+  margin:0;
+}
+.small-note{
+  font-size:clamp(.62rem,1.1vw,.78rem);
+  color:#6b6b6b;
+}
+.tbc{
+  display:inline-block;
+  background:#fff3e0;
+  color:var(--red);
+  border:1px solid var(--red);
+  font-size:.72em;
+  font-weight:700;
+  padding:1px 7px;
+  border-radius:3px;
+  white-space:nowrap;
+}
+
+/* ==== Cover ==== */
+.cover{
+  background:linear-gradient(160deg,var(--navy) 0%,#0b1640 100%);
+  color:#fff;
+  justify-content:center;
+  align-items:flex-start;
+  position:relative;
+}
+.cover::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(90deg,rgba(184,138,50,.18) 1px,transparent 1px),
+    linear-gradient(0deg,rgba(184,138,50,.10) 1px,transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;
+}
+.cover .eyebrow{color:var(--gold);border-color:var(--gold);}
+.cover h1{
+  position:relative;
+  font-size:clamp(1.6rem,4.2vw,3rem);
+  font-weight:800;
+  line-height:1.3;
+  margin:6px 0 4px;
+}
+.cover .accent-line{
+  width:72px;height:4px;background:var(--red);margin:14px 0;
+}
+.cover .meta{
+  position:relative;
+  font-size:clamp(.75rem,1.4vw,.95rem);
+  color:#d9deee;
+  line-height:1.9;
+}
+
+/* ==== Lists ==== */
+ul.bullets{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.55em;}
+ul.bullets li{
+  position:relative;
+  padding-left:1.3em;
+  font-size:clamp(.82rem,1.55vw,1.05rem);
+  line-height:1.6;
+}
+ul.bullets li::before{
+  content:"";
+  position:absolute;left:0;top:.55em;
+  width:8px;height:8px;
+  background:var(--gold);
+}
+ul.bullets.num{counter-reset:n;}
+ul.bullets.num li{counter-increment:n;padding-left:1.9em;}
+ul.bullets.num li::before{
+  content:counter(n);
+  background:none;
+  width:1.4em;height:1.4em;
+  border:2px solid var(--navy);
+  border-radius:50%;
+  color:var(--navy);
+  font-weight:700;
+  font-size:.78em;
+  display:flex;align-items:center;justify-content:center;
+  top:.05em;
+}
+
+/* ==== Grid / cards ==== */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,2vw,20px);}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.6vw,16px);}
+@media(max-width:760px){
+  .grid-2,.grid-3{grid-template-columns:1fr;}
+}
+.card{
+  background:#fff;
+  border:1px solid #ddd4bf;
+  border-radius:6px;
+  padding:clamp(10px,1.8vw,18px);
+}
+.card h3{
+  margin:0 0 8px;
+  color:var(--navy);
+  font-size:clamp(.8rem,1.5vw,1rem);
+  border-left:4px solid var(--gold);
+  padding-left:8px;
+}
+.card.dark{background:var(--navy);color:#fff;}
+.card.dark h3{color:#fff;border-color:var(--gold);}
+.card p, .card li{font-size:clamp(.75rem,1.4vw,.95rem);}
+
+/* ==== compare table ==== */
+table.cmp{width:100%;border-collapse:collapse;background:#fff;font-size:clamp(.72rem,1.4vw,.95rem);}
+table.cmp th,table.cmp td{border:1px solid #ddd4bf;padding:clamp(6px,1vw,12px);text-align:left;vertical-align:top;}
+table.cmp th{background:var(--navy);color:#fff;font-weight:700;}
+table.cmp td.no{color:var(--red);}
+table.cmp td.yes{color:#1c6b2e;}
+table.cmp tr:nth-child(even) td{background:#faf7ee;}
+
+/* ==== flow diagram ==== */
+.flow{
+  display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;
+}
+.flow .fstep{
+  flex:1 1 120px;
+  background:#fff;
+  border:1.5px solid var(--navy);
+  border-radius:5px;
+  padding:clamp(8px,1.4vw,14px) clamp(6px,1vw,10px);
+  font-size:clamp(.68rem,1.25vw,.88rem);
+  text-align:center;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--navy);
+  font-weight:700;
+  min-height:3.4em;
+}
+.flow .farrow{
+  align-self:center;
+  color:var(--gold);
+  font-size:1.3rem;
+  font-weight:900;
+}
+.flow.vertical{flex-direction:column;}
+.flow.vertical .farrow{transform:rotate(90deg);align-self:flex-start;margin-left:2em;}
+
+/* ==== stat bar ==== */
+.statbar{width:100%;}
+.statbar .bar-track{
+  display:flex;width:100%;height:34px;border-radius:4px;overflow:hidden;border:1px solid #ccc;
+}
+.statbar .seg-a{background:var(--navy);}
+.statbar .seg-b{background:#cfd6ea;}
+.statbar .legend{display:flex;justify-content:space-between;font-size:clamp(.68rem,1.3vw,.88rem);margin-top:6px;color:#333;}
+.statbar .legend .dot{display:inline-block;width:10px;height:10px;margin-right:5px;vertical-align:middle;}
+
+/* ==== quote ==== */
+.quote-block{
+  background:#fff;
+  border-left:6px solid var(--red);
+  padding:clamp(14px,2.4vw,26px);
+  font-size:clamp(1rem,2.2vw,1.5rem);
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.7;
+}
+
+/* ==== section divider mini ==== */
+.divider{height:3px;background:linear-gradient(90deg,var(--gold),transparent);width:80px;}
+
+/* ==== controls ==== */
+.controls{
+  position:fixed;left:0;right:0;bottom:0;
+  background:rgba(16,31,90,.94);
+  color:#fff;
+  display:flex;align-items:center;gap:10px;
+  padding:10px clamp(10px,3vw,26px);
+  z-index:60;
+  backdrop-filter:blur(2px);
+}
+.controls button{
+  background:transparent;
+  border:1.5px solid rgba(255,255,255,.5);
+  color:#fff;
+  border-radius:5px;
+  padding:8px 14px;
+  font-size:.85rem;
+  cursor:pointer;
+  display:flex;align-items:center;gap:6px;
+}
+.controls button:hover{border-color:var(--gold);color:var(--gold);}
+.controls button:disabled{opacity:.35;cursor:default;}
+.controls .spacer{flex:1;}
+.controls .counter{font-size:.85rem;letter-spacing:.05em;white-space:nowrap;}
+.controls .counter b{color:var(--gold);}
+.controls .hint{font-size:.68rem;color:#b9c0dd;display:none;}
+@media(min-width:820px){.controls .hint{display:inline;}}
+.controls button.notes-btn.active{background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:700;}
+
+/* ==== notes panel ==== */
+.notes-panel{
+  position:fixed;right:0;top:0;bottom:0;
+  width:min(360px,88vw);
+  background:#fff;
+  border-left:4px solid var(--gold);
+  box-shadow:-8px 0 24px rgba(0,0,0,.25);
+  transform:translateX(100%);
+  transition:transform .3s ease;
+  z-index:70;
+  display:flex;flex-direction:column;
+}
+.notes-panel.open{transform:translateX(0);}
+.notes-panel .np-head{
+  background:var(--navy);color:#fff;
+  padding:14px 16px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.notes-panel .np-head span{font-weight:700;font-size:.9rem;}
+.notes-panel .np-head button{
+  background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;line-height:1;
+}
+.notes-panel .np-body{
+  padding:16px 18px;
+  overflow-y:auto;
+  font-size:.88rem;
+  line-height:1.85;
+  color:#2a2a2a;
+}
+.notes-panel .np-body p{margin:0 0 .9em;}
+.notes-panel .np-foot{
+  padding:10px 16px;border-top:1px solid #eee;
+  font-size:.7rem;color:#888;
+}
+
+/* ==== usage hint (first load) ==== */
+.usage-hint{
+  position:fixed;left:50%;bottom:76px;transform:translateX(-50%);
+  background:rgba(0,0,0,.75);color:#fff;
+  padding:8px 16px;border-radius:20px;font-size:.75rem;
+  z-index:65;pointer-events:none;
+  transition:opacity .6s ease;
+}
+
+/* ==== screen reader only ==== */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+/* ==================== PRINT ==================== */
+@media print{
+  @page{ size: 338mm 190mm; margin: 0; }
+  body{background:#fff;}
+  .topbar,.controls,.notes-panel,.usage-hint{display:none !important;}
+  .app{padding:0;min-height:0;display:block;}
+  .deck-frame{max-width:none;}
+  .deck{
+    aspect-ratio:auto;
+    box-shadow:none;border-radius:0;overflow:visible;
+  }
+  .slides-track{
+    display:block;
+    transform:none !important;
+    height:auto;
+  }
+  .slide{
+    display:block !important;
+    width:100%;
+    height:100vh;
+    overflow:visible;
+    page-break-after:always;
+    break-after:page;
+  }
+  .slide:last-child{page-break-after:auto;}
+  .slide-inner{min-height:100vh;padding:36px 48px;}
+  body.print-with-notes .print-notes{
+    display:block;
+    margin-top:14px;
+    border-top:2px dashed var(--gold);
+    padding-top:10px;
+    font-size:.7rem;
+    color:#333;
+  }
+  .print-notes{display:none;}
+}
+.print-notes{display:none;}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-fill" id="topbarFill"></div></div>
+
+<div class="app">
+  <div class="deck-frame">
+    <div class="deck" id="deck" tabindex="0" aria-roledescription="スライドショー" aria-label="GX営業コンテンツ 営業教材">
+      <div class="slides-track" id="track">
+
+        <!-- 1: 表紙 -->
+        <section class="slide" data-title="表紙">
+          <div class="slide-inner cover">
+            <span class="eyebrow">内部営業教材 ／ 個別相談用</span>
+            <h1>GX営業コンテンツ<br>個別相談 営業教材</h1>
+            <div class="accent-line"></div>
+            <p class="meta">
+              対象：無料オンラインセミナー参加者との個別相談担当者<br>
+              価格帯：約1,600,000円のGX営業コンテンツ<br>
+              制度情報基準日：2026年8月17日<br>
+              本資料は営業担当者向けの内部教材です。顧客への配布は想定していません。
+            </p>
+          </div>
+          <div class="notes">
+            <p>この教材は、御社（営業担当者）がGX営業コンテンツを個別相談の場で説明し、契約判断まで導くための内部教材です。まず自己紹介をしてから、本日の面談の進め方を共有してください（talk-script.mdの「1. 挨拶」「2. 面談目的の共有」を参照）。</p>
+          </div>
+        </section>
+
+        <!-- 2: この教材の目的 -->
+        <section class="slide" data-title="この教材の目的">
+          <div class="slide-inner">
+            <span class="eyebrow">01 ／ INTRODUCTION</span>
+            <h1 class="slide-title">この教材の目的</h1>
+            <p class="lead">個別相談で、見込み客を「納得した契約判断」まで導くために使います。</p>
+            <ul class="bullets num">
+              <li>商品の本質を分かりやすく説明する</li>
+              <li>相手の経営課題を正確に聞き出す</li>
+              <li>約160万円を支払う合理的な理由を整理する</li>
+              <li>導入後の売上・利益へのつながりを具体化する</li>
+              <li>不安や反論を解消する</li>
+              <li>最終的な契約判断まで進める</li>
+            </ul>
+          </div>
+          <div class="notes">
+            <p>この6つの目的は、そのまま面談の流れの骨格になります。特に「①説明」より前に「②ヒアリング」を意識してください。この教材全体のルールは「説明より先にヒアリング」です。</p>
+          </div>
+        </section>
+
+        <!-- 3: 商品を一言で表す -->
+        <section class="slide" data-title="商品を一言で表す">
+          <div class="slide-inner">
+            <span class="eyebrow">02 ／ CORE MESSAGE</span>
+            <h1 class="slide-title">この商品を、一言で表すと</h1>
+            <div class="quote-block">
+              価格だけで比較されるリフォーム営業から抜け出し、快適性・省エネ性能・光熱費・健康面・資金計画・施工品質まで含めた高付加価値提案を、自社で実践できるようにするGX営業コンテンツ
+            </div>
+            <p class="small-note">GX＝グリーン・トランスフォーメーション。環境に配慮しながら社会や住宅のあり方を変えていく国の取り組み。</p>
+          </div>
+          <div class="notes">
+            <p>この一文が全ての説明の軸です。丸暗記ではなく、自分の言葉に置き換えて話せるようにしてください（sales-manual.md「0. まず、この商品を一言で」参照）。</p>
+          </div>
+        </section>
+
+        <!-- 4: この商品は何ではないのか -->
+        <section class="slide" data-title="この商品は何ではないのか">
+          <div class="slide-inner">
+            <span class="eyebrow">03 ／ WHAT THIS IS NOT</span>
+            <h1 class="slide-title">この商品は「補助金申請代行」ではない</h1>
+            <table class="cmp">
+              <thead><tr><th></th><th>補助金申請代行サービス</th><th>GX営業コンテンツ（本商品）</th></tr></thead>
+              <tbody>
+                <tr><td>提供するもの</td><td>申請書類の作成・提出代行</td><td>高付加価値提案を自社で実践する力・資料・伴走支援</td></tr>
+                <tr><td>ゴール</td><td>補助金を受け取ること</td><td>提案力を身につけ、受注につなげること</td></tr>
+                <tr><td>補助金の位置づけ</td><td>商品そのもの</td><td>施主の負担を抑える"手段のひとつ"</td></tr>
+              </tbody>
+            </table>
+            <p class="small-note">禁止表現：「必ず補助金が出る」「実質無料になる」「今契約しないと補助金がなくなる」</p>
+          </div>
+          <div class="notes">
+            <p>ここは最も誤解されやすいポイントです。個別相談の早い段階で必ず伝えてください（sales-manual.md「5. 補助金申請代行との違い」参照）。</p>
+          </div>
+        </section>
+
+        <!-- 5: 対象となる会社 -->
+        <section class="slide" data-title="対象となる会社">
+          <div class="slide-inner">
+            <span class="eyebrow">04 ／ TARGET</span>
+            <h1 class="slide-title">対象となる会社</h1>
+            <div class="grid-3">
+              <div class="card"><h3>業種</h3><ul class="bullets"><li>工務店</li><li>リフォーム会社</li><li>建築会社・元請け会社</li></ul></div>
+              <div class="card"><h3>事業の方向性</h3><ul class="bullets"><li>新築中心からリフォームへ展開したい</li><li>好調だが5〜10年後の収益源を探している</li></ul></div>
+              <div class="card"><h3>課題・関心</h3><ul class="bullets"><li>価格競争に悩んでいる</li><li>GX・断熱・省エネを取り入れたい</li><li>過去客への再提案商品が欲しい</li></ul></div>
+            </div>
+          </div>
+          <div class="notes">
+            <p>ヒアリング（hearing-sheet.md）で、相手がこのどのタイプに近いかを早い段階で見極めてください。</p>
+          </div>
+        </section>
+
+        <!-- 6: 工務店が直面する経営課題 -->
+        <section class="slide" data-title="工務店が直面する経営課題">
+          <div class="slide-inner">
+            <span class="eyebrow">05 ／ MARKET CONTEXT</span>
+            <h1 class="slide-title">工務店が直面している経営課題</h1>
+            <div class="flow">
+              <div class="fstep">新築市場の縮小</div><div class="farrow">→</div>
+              <div class="fstep">新築会社が<br>リフォームへ参入</div><div class="farrow">→</div>
+              <div class="fstep">資材高騰・<br>人手不足</div><div class="farrow">→</div>
+              <div class="fstep">相見積もりの<br>価格競争</div><div class="farrow">→</div>
+              <div class="fstep" style="border-color:var(--red);color:var(--red);">粗利益の低下</div>
+            </div>
+            <p class="small-note">煽るためではなく、業界全体で起きている変化として、事実の順番で伝える。</p>
+          </div>
+          <div class="notes">
+            <p>ここは一般論として提示し、相手固有の状況はヒアリングで確認します。「今動かなければ必ず倒産する」といった過剰な表現は使わないでください。</p>
+          </div>
+        </section>
+
+        <!-- 7: 新築とリフォーム市場の変化 -->
+        <section class="slide" data-title="新築とリフォーム市場の変化">
+          <div class="slide-inner">
+            <span class="eyebrow">06 ／ POLICY TIMELINE</span>
+            <h1 class="slide-title">省エネ基準は、すでに動き出している</h1>
+            <div class="flow vertical">
+              <div class="fstep" style="text-align:left;justify-content:flex-start;">2025年4月　新築住宅等の省エネ基準への適合が義務化 <span class="tbc">出典確認が必要（最新状態）</span></div>
+              <div class="farrow">→</div>
+              <div class="fstep" style="text-align:left;justify-content:flex-start;">2030年まで　ZEH水準への基準引き上げが予定されている <span class="tbc">出典確認が必要（最新状態）</span></div>
+            </div>
+            <p class="small-note">出典：国土交通省・省エネ基準（https://www.mlit.go.jp/shoene-jutaku/）。最新状態は公式サイトで確認する。</p>
+          </div>
+          <div class="notes">
+            <p>「予定」であり確定した実施内容ではない点に注意して話してください。日付を断定しすぎず、公式サイトでの確認を促す姿勢で説明します。</p>
+          </div>
+        </section>
+
+        <!-- 8: なぜ今GXなのか -->
+        <section class="slide" data-title="なぜ今GXなのか">
+          <div class="slide-inner">
+            <span class="eyebrow">07 ／ WHY NOW</span>
+            <h1 class="slide-title">既存住宅の8割以上が、省エネ基準に未対応</h1>
+            <div class="statbar">
+              <div class="bar-track">
+                <div class="seg-a" style="width:18%;"></div>
+                <div class="seg-b" style="width:82%;"></div>
+              </div>
+              <div class="legend">
+                <span><span class="dot" style="background:var(--navy);"></span>適合済み 18％</span>
+                <span><span class="dot" style="background:#cfd6ea;"></span>同資料の定義で約82％が未適合</span>
+              </div>
+            </div>
+            <p class="small-note">出典：国土交通省・省エネ基準適合住宅ストックに関する資料（2022年度時点） <span class="tbc">出典確認が必要（該当ページ再確認）</span>／「87％が未対応」という断定表現は使用しない</p>
+          </div>
+          <div class="notes">
+            <p>断熱・省エネリフォームの潜在需要がまだ大きく残っているという事実を、正確な数字で伝えます。誇張・断定は禁止です。地域差については確認できるデータがないため、聞かれたら「出典確認が必要」と正直に答えてください。</p>
+          </div>
+        </section>
+
+        <!-- 9: 施主が求める価値の変化 -->
+        <section class="slide" data-title="施主が求める価値の変化">
+          <div class="slide-inner">
+            <span class="eyebrow">08 ／ CUSTOMER NEEDS</span>
+            <h1 class="slide-title">施主が求める価値は変化している</h1>
+            <div class="grid-3">
+              <div class="card"><h3>快適性</h3><ul class="bullets"><li>暑さ・寒さの軽減</li><li>結露・カビの抑制</li></ul></div>
+              <div class="card"><h3>経済性</h3><ul class="bullets"><li>冷暖房効率の改善</li><li>光熱費負担を抑えられる可能性</li></ul></div>
+              <div class="card"><h3>安心感</h3><ul class="bullets"><li>将来を見据えた住宅性能</li><li>工事と資金計画をまとめて相談できる安心感</li></ul></div>
+            </div>
+            <p class="small-note">効果は住宅条件・生活状況・施工内容によって異なり、保証はできない。</p>
+          </div>
+          <div class="notes">
+            <p>ここから「施主にとっての価値」の伏線として使います。断定表現（必ず暖かくなる、など）は避けてください。</p>
+          </div>
+        </section>
+
+        <!-- 10: 従来型リフォームの価格競争 -->
+        <section class="slide" data-title="従来型リフォームの価格競争">
+          <div class="slide-inner">
+            <span class="eyebrow">09 ／ THE PROBLEM</span>
+            <h1 class="slide-title">価格だけの比較は、終わりのない競争になる</h1>
+            <div class="flow">
+              <div class="fstep">価格だけで<br>比較される</div><div class="farrow">→</div>
+              <div class="fstep">値引きで<br>対抗する</div><div class="farrow">→</div>
+              <div class="fstep" style="border-color:var(--red);color:var(--red);">粗利益が<br>下がる</div><div class="farrow">→</div>
+              <div class="fstep">次の受注も<br>価格勝負になる</div>
+            </div>
+            <p class="lead">この構造から抜け出すには、価格以外の比較軸が必要になる。</p>
+          </div>
+          <div class="notes">
+            <p>ヒアリングで確認した「値引きの頻度」「相見積もりの失注状況」（hearing-sheet.md 質問6・7）と結びつけて話すと納得感が高まります。</p>
+          </div>
+        </section>
+
+        <!-- 11: GX提案による比較軸の変化 -->
+        <section class="slide" data-title="GX提案による比較軸の変化">
+          <div class="slide-inner">
+            <span class="eyebrow">10 ／ NEW AXIS</span>
+            <h1 class="slide-title">比較される軸を、価格の1本から複数へ</h1>
+            <div class="grid-2">
+              <div class="card"><h3>従来型の比較軸</h3><ul class="bullets"><li>工事金額</li></ul></div>
+              <div class="card dark"><h3>GX提案の比較軸</h3><ul class="bullets"><li>工事金額</li><li>断熱・省エネ性能</li><li>快適性・健康面</li><li>資金計画（補助制度含む）</li><li>施工品質</li></ul></div>
+            </div>
+          </div>
+          <div class="notes">
+            <p>「価格競争から完全に脱却できる」とは言わないこと。あくまで比較軸を増やせる可能性がある、という伝え方にとどめてください。</p>
+          </div>
+        </section>
+
+        <!-- 12: 施主にとっての価値 -->
+        <section class="slide" data-title="施主にとっての価値">
+          <div class="slide-inner">
+            <span class="eyebrow">11 ／ VALUE：CUSTOMER</span>
+            <h1 class="slide-title">施主にとっての価値</h1>
+            <ul class="bullets">
+              <li>暑さ・寒さの軽減、結露やカビの抑制</li>
+              <li>冷暖房効率の改善、光熱費負担を抑えられる可能性</li>
+              <li>将来を見据えた住宅性能</li>
+              <li>補助制度が利用できた場合の負担軽減</li>
+              <li>工事内容と資金計画をまとめて相談できる安心感</li>
+            </ul>
+            <p class="small-note">効果は住宅条件・生活状況・施工内容によって異なるため、保証表現は使わない。</p>
+          </div>
+          <div class="notes">
+            <p>施主向けに話す際のトーンをそのまま流用できます。「必ず」「確実に」という言葉を使わないよう注意してください。</p>
+          </div>
+        </section>
+
+        <!-- 13: 導入会社にとっての価値 -->
+        <section class="slide" data-title="導入会社にとっての価値">
+          <div class="slide-inner">
+            <span class="eyebrow">12 ／ VALUE：COMPANY</span>
+            <h1 class="slide-title">導入会社にとっての価値</h1>
+            <div class="grid-2">
+              <div class="card"><h3>提案力・差別化</h3><ul class="bullets"><li>価格以外の比較軸を作れる</li><li>値引きだけに頼らない提案</li><li>GXに詳しい会社としての差別化</li></ul></div>
+              <div class="card"><h3>収益・関係性</h3><ul class="bullets"><li>一件あたりの提案範囲を広げられる</li><li>過去客への再提案、追加受注・紹介の可能性</li><li>新しい収益の柱を作れる</li></ul></div>
+            </div>
+            <p class="small-note">「必ず単価が1.5倍になる」等の断定は禁止。裏付けが確認できるまでは「高付加価値化により、受注単価や粗利益の向上を目指す」と表現する。</p>
+          </div>
+          <div class="notes">
+            <p>成果の断定は絶対にしないでください。あくまで「可能性」「目指す」という表現を使います。</p>
+          </div>
+        </section>
+
+        <!-- 14: 160万円のコンテンツ内容 -->
+        <section class="slide" data-title="160万円のコンテンツ内容">
+          <div class="slide-inner">
+            <span class="eyebrow">13 ／ WHAT'S INCLUDED</span>
+            <h1 class="slide-title">約160万円の中身</h1>
+            <div class="grid-3">
+              <div class="card"><h3>知識・設計</h3><ul class="bullets"><li>GX市場と制度の基礎知識</li><li>高付加価値商品の設計方法</li><li>資金計画（補助制度含む）</li></ul></div>
+              <div class="card"><h3>営業実務</h3><ul class="bullets"><li>施主向け提案方法・営業トーク</li><li>見積もり方法・ヒアリングシート</li><li>営業担当者の教育</li></ul></div>
+              <div class="card"><h3>伴走支援</h3><ul class="bullets"><li>個別コンサルティング・導入サポート</li><li>制度改定時の情報更新・申請実務支援</li><li>成功事例・テンプレート・アフターサポート</li></ul></div>
+            </div>
+            <p class="small-note"><span class="tbc">販売元へ要確認</span> 各項目の具体的な回数・分量・提供形式は、契約前に書面で確認する。</p>
+          </div>
+          <div class="notes">
+            <p>この表はsales-manual.md「6. 160万円の価値」と対応しています。未確認項目を「必ず提供されます」と断定しないでください。</p>
+          </div>
+        </section>
+
+        <!-- 15: 導入から実行までの流れ -->
+        <section class="slide" data-title="導入から実行までの流れ">
+          <div class="slide-inner">
+            <span class="eyebrow">14 ／ ONBOARDING</span>
+            <h1 class="slide-title">導入から実行までの流れ（イメージ）</h1>
+            <div class="flow">
+              <div class="fstep">契約・<br>支払い確認</div><div class="farrow">→</div>
+              <div class="fstep">キックオフ・<br>目標すり合わせ</div><div class="farrow">→</div>
+              <div class="fstep">基礎知識<br>インプット</div><div class="farrow">→</div>
+              <div class="fstep">自社商品・<br>提案資料の設計</div><div class="farrow">→</div>
+              <div class="fstep">教育・<br>現場適用</div><div class="farrow">→</div>
+              <div class="fstep">コンサル・<br>継続支援</div>
+            </div>
+            <p class="small-note">具体的な日数・回数は<span class="tbc">販売元へ要確認</span>。断定的なスケジュールは提示しない。</p>
+          </div>
+          <div class="notes">
+            <p>closing-script.mdの「導入する場合の90日間」と対応する内容です。あくまでイメージであることを明言してください。</p>
+          </div>
+        </section>
+
+        <!-- 16: 補助制度の正しい位置づけ -->
+        <section class="slide" data-title="補助制度の正しい位置づけ">
+          <div class="slide-inner">
+            <span class="eyebrow">15 ／ SUBSIDY</span>
+            <h1 class="slide-title">補助金は「手段」であり「商品」ではない</h1>
+            <div class="grid-2">
+              <div class="card dark"><h3>正しい伝え方</h3><p>補助制度は、施主の負担を抑え、意思決定を後押しするための手段のひとつ。制度の詳細・最新条件は公式サイトで必ず確認する。</p></div>
+              <div class="card" style="border-color:var(--red);"><h3 style="border-color:var(--red);color:var(--red);">禁止表現</h3><ul class="bullets"><li>必ず補助金が出る</li><li>誰でも対象になる</li><li>実質無料になる</li><li>今契約しないと補助金がなくなる</li></ul></div>
+            </div>
+          </div>
+          <div class="notes">
+            <p>このスライドは最重要の禁止事項です。個別相談の中で、補助金の話が出たら必ずこのトーンに戻してください（fact-check.md「8. 禁止表現チェックリスト」参照）。</p>
+          </div>
+        </section>
+
+        <!-- 17: 投資回収の考え方 -->
+        <section class="slide" data-title="投資回収の考え方">
+          <div class="slide-inner">
+            <span class="eyebrow">16 ／ ROI</span>
+            <h1 class="slide-title">投資回収の考え方（試算）</h1>
+            <table class="cmp">
+              <thead><tr><th>1件あたりの追加粗利益</th><th>回収に必要な件数（目安）</th></tr></thead>
+              <tbody>
+                <tr><td>200,000円</td><td>8件</td></tr>
+                <tr><td>300,000円</td><td>6件（端数切り上げ）</td></tr>
+                <tr><td>400,000円</td><td>4件</td></tr>
+              </tbody>
+            </table>
+            <p class="small-note">導入費用1,600,000円を基準とした試算。roi-calculator.html で御社の実数値を用いて再計算する。すべて試算であり、成果を保証するものではない。</p>
+          </div>
+          <div class="notes">
+            <p>ここで roi-calculator.html を画面共有し、相手のヒアリング結果（単価・粗利益・件数）を入力して一緒に試算してください（talk-script.md「12. 投資回収の考え方」参照）。</p>
+          </div>
+        </section>
+
+        <!-- 18: 向いている会社・向いていない会社 -->
+        <section class="slide" data-title="向いている会社・向いていない会社">
+          <div class="slide-inner">
+            <span class="eyebrow">17 ／ FIT CHECK</span>
+            <h1 class="slide-title">向いている会社・向いていない会社</h1>
+            <div class="grid-2">
+              <div class="card"><h3>向いている会社</h3><ul class="bullets"><li>断熱・省エネの提案力を自社に持ちたい</li><li>価格以外の比較軸を求めている</li><li>施工体制・実行体制を整えられる、または整える意思がある</li></ul></div>
+              <div class="card" style="border-color:var(--red);"><h3 style="border-color:var(--red);color:var(--red);">向いていない会社</h3><ul class="bullets"><li>施工できる協力会社の確保が全く見込めない</li><li>提案・営業に割ける人員が全くいない</li><li>補助金だけが目的で、提案力の獲得に関心がない</li><li>短期間の成果保証を求めている</li></ul></div>
+            </div>
+            <p class="small-note">向いていない会社に無理に販売しない。これは長期的な信頼のための基準。</p>
+          </div>
+          <div class="notes">
+            <p>ここは営業担当者としての倫理的な基準です。ヒアリング結果がC判定の場合は、正直に伝えてください（hearing-sheet.md「適合度チェック」参照）。</p>
+          </div>
+        </section>
+
+        <!-- 19: ヒアリングの進め方 -->
+        <section class="slide" data-title="ヒアリングの進め方">
+          <div class="slide-inner">
+            <span class="eyebrow">18 ／ HEARING</span>
+            <h1 class="slide-title">説明より先に、ヒアリングする</h1>
+            <div class="flow">
+              <div class="fstep">経営の<br>現状</div><div class="farrow">→</div>
+              <div class="fstep">価格競争の<br>実態</div><div class="farrow">→</div>
+              <div class="fstep">既存資産<br>（過去顧客）</div><div class="farrow">→</div>
+              <div class="fstep">GX・省エネの<br>経験</div><div class="farrow">→</div>
+              <div class="fstep">実行体制</div><div class="farrow">→</div>
+              <div class="fstep">将来像・<br>契約判断</div>
+            </div>
+            <p class="lead">最後に、見込み客をA・B・Cの3段階で判定する（hearing-sheet.md）。</p>
+          </div>
+          <div class="notes">
+            <p>全20問の詳細はhearing-sheet.mdを参照。特に「意思決定者」「導入時期」「予算」「最も大きな不安」の4問は必ず確認してください。</p>
+          </div>
+        </section>
+
+        <!-- 20: 主な反論と回答 -->
+        <section class="slide" data-title="主な反論と回答">
+          <div class="slide-inner">
+            <span class="eyebrow">19 ／ OBJECTIONS</span>
+            <h1 class="slide-title">主な反論と、対応の型</h1>
+            <p class="lead">すべて「①共感 → ②本当の理由の確認 → ③事実整理 → ④再質問 → ⑤判断確認」の順で対応する。</p>
+            <div class="grid-3">
+              <div class="card"><h3>金額・成果への不安</h3><ul class="bullets"><li>160万円は高い</li><li>本当に売上につながるのか</li><li>成果保証がないので不安</li></ul></div>
+              <div class="card"><h3>体制・実行への不安</h3><ul class="bullets"><li>担当者がいない</li><li>施工できる職人がいない</li><li>今は忙しくて取り組めない</li></ul></div>
+              <div class="card"><h3>判断を先延ばしにしたい</h3><ul class="bullets"><li>他社と比較したい</li><li>社内・家族に相談したい</li><li>今決める必要はない</li></ul></div>
+            </div>
+          </div>
+          <div class="notes">
+            <p>全15項目の詳細はobjection-handling.mdを参照。強引な切り返しではなく、相手が自分で納得して判断できる流れを意識してください。</p>
+          </div>
+        </section>
+
+        <!-- 21: クロージングの流れ -->
+        <section class="slide" data-title="クロージングの流れ">
+          <div class="slide-inner">
+            <span class="eyebrow">20 ／ CLOSING</span>
+            <h1 class="slide-title">クロージングは、3つの結論のどれかで終える</h1>
+            <div class="flow">
+              <div class="fstep">テスト<br>クロージング</div><div class="farrow">→</div>
+              <div class="fstep">意思決定者・<br>不安の確認</div><div class="farrow">→</div>
+              <div class="fstep">投資回収・<br>支払条件の確認</div><div class="farrow">→</div>
+              <div class="fstep" style="border-color:var(--gold);color:var(--red);font-weight:900;">最終意思確認</div>
+            </div>
+            <div class="grid-3">
+              <div class="card dark"><h3>進める</h3><p>契約手続きへ</p></div>
+              <div class="card dark"><h3>条件を確認して進める</h3><p>次回日程を確定</p></div>
+              <div class="card dark"><h3>今回は見送る</h3><p>理由を確認し丁寧に終える</p></div>
+            </div>
+            <p class="small-note">「今すぐ決めないと損をする」といった根拠のない煽りは使わない。</p>
+          </div>
+          <div class="notes">
+            <p>closing-script.mdの全10ステップを参照。曖昧なまま面談を終えないことが重要です。</p>
+          </div>
+        </section>
+
+        <!-- 22: 販売元へ確認すべき項目 -->
+        <section class="slide" data-title="販売元へ確認すべき項目">
+          <div class="slide-inner">
+            <span class="eyebrow">21 ／ TO BE CONFIRMED</span>
+            <h1 class="slide-title">販売元へ確認すべき項目</h1>
+            <ul class="bullets num">
+              <li>160万円の税込・税別、分割払いの可否と条件</li>
+              <li>契約期間・提供期間</li>
+              <li>160万円の提供内容の最終確定リスト</li>
+              <li>個別コンサルティング・導入サポート・アフターサポートの具体的な回数・期間</li>
+              <li>紹介可能な導入企業事例の有無と開示条件</li>
+              <li>成約率50〜60％の分母・対象期間・母数（内部参考値。確認できるまで顧客には非提示）</li>
+              <li>受注単価変化に関する裏付けデータ（事例・期間・母数）</li>
+            </ul>
+            <p class="small-note">詳細はfact-check.md「7. 未確認情報一覧」を参照。確認が取れ次第、本教材を更新する。</p>
+          </div>
+          <div class="notes">
+            <p>これは教材の最後のスライドです。営業担当者向けの締めとして、未確認情報を正直に扱う姿勢を強調してください。顧客の前でこのスライドをそのまま見せる場合は、成約率の行を必ず除外してください。</p>
+          </div>
+        </section>
+
+      </div><!-- /track -->
+    </div><!-- /deck -->
+  </div><!-- /deck-frame -->
+</div><!-- /app -->
+
+<div class="usage-hint" id="usageHint">← → キー／スワイプ／ボタンで操作　N キーでスピーカーノート</div>
+
+<div class="controls" role="toolbar" aria-label="スライド操作">
+  <button id="btnPrev" aria-label="前のスライド">‹ 前へ</button>
+  <button id="btnNext" aria-label="次のスライド">次へ ›</button>
+  <span class="counter"><b id="curNum">1</b> / <span id="totalNum">22</span>　<span id="slideTitle"></span></span>
+  <span class="spacer"></span>
+  <label class="hint" style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+    <input type="checkbox" id="printNotesToggle"> 印刷にノートを含める
+  </label>
+  <button id="btnPrint" aria-label="印刷・PDF保存">印刷 / PDF</button>
+  <button id="btnNotes" class="notes-btn" aria-label="スピーカーノートを表示">ノート</button>
+</div>
+
+<div class="notes-panel" id="notesPanel" aria-hidden="true">
+  <div class="np-head">
+    <span id="npTitle">スピーカーノート</span>
+    <button id="btnCloseNotes" aria-label="ノートを閉じる">×</button>
+  </div>
+  <div class="np-body" id="npBody"></div>
+  <div class="np-foot">この場で話す内容の目安です。自分の言葉に置き換えて使ってください。</div>
+</div>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var track = document.getElementById('track');
+  var total = slides.length;
+  var index = 0;
+
+  var curNum = document.getElementById('curNum');
+  var totalNum = document.getElementById('totalNum');
+  var slideTitle = document.getElementById('slideTitle');
+  var topbarFill = document.getElementById('topbarFill');
+  var btnPrev = document.getElementById('btnPrev');
+  var btnNext = document.getElementById('btnNext');
+  var btnNotes = document.getElementById('btnNotes');
+  var btnCloseNotes = document.getElementById('btnCloseNotes');
+  var notesPanel = document.getElementById('notesPanel');
+  var npBody = document.getElementById('npBody');
+  var npTitle = document.getElementById('npTitle');
+  var btnPrint = document.getElementById('btnPrint');
+  var printNotesToggle = document.getElementById('printNotesToggle');
+  var usageHint = document.getElementById('usageHint');
+
+  totalNum.textContent = total;
+
+  // Build hidden print-notes blocks (so print CSS can optionally reveal them)
+  slides.forEach(function(s){
+    var n = s.querySelector('.notes');
+    if(n){
+      var clone = document.createElement('div');
+      clone.className = 'print-notes';
+      clone.innerHTML = '<strong>スピーカーノート：</strong>' + n.innerHTML;
+      s.querySelector('.slide-inner').appendChild(clone);
+    }
+  });
+
+  function render(){
+    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    curNum.textContent = index + 1;
+    slideTitle.textContent = slides[index].getAttribute('data-title') || '';
+    topbarFill.style.width = (((index + 1) / total) * 100) + '%';
+    btnPrev.disabled = (index === 0);
+    btnNext.disabled = (index === total - 1);
+    updateNotes();
+    slides[index].querySelector('.slide-inner').scrollTop = 0;
+  }
+
+  function updateNotes(){
+    var n = slides[index].querySelector('.notes');
+    npBody.innerHTML = n ? n.innerHTML : '<p>このスライドにはノートがありません。</p>';
+    npTitle.textContent = 'スピーカーノート ｜ ' + (index + 1) + ' / ' + total;
+  }
+
+  function goTo(i){
+    if(i < 0 || i >= total) return;
+    index = i;
+    render();
+  }
+
+  btnPrev.addEventListener('click', function(){ goTo(index - 1); });
+  btnNext.addEventListener('click', function(){ goTo(index + 1); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight' || e.key === 'PageDown'){ goTo(index + 1); e.preventDefault(); }
+    else if(e.key === 'ArrowLeft' || e.key === 'PageUp'){ goTo(index - 1); e.preventDefault(); }
+    else if(e.key === 'Home'){ goTo(0); e.preventDefault(); }
+    else if(e.key === 'End'){ goTo(total - 1); e.preventDefault(); }
+    else if(e.key.toLowerCase() === 'n'){ toggleNotes(); }
+    else if(e.key === 'Escape'){ closeNotes(); }
+  });
+
+  function toggleNotes(){
+    var open = notesPanel.classList.toggle('open');
+    notesPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    btnNotes.classList.toggle('active', open);
+  }
+  function closeNotes(){
+    notesPanel.classList.remove('open');
+    notesPanel.setAttribute('aria-hidden', 'true');
+    btnNotes.classList.remove('active');
+  }
+  btnNotes.addEventListener('click', toggleNotes);
+  btnCloseNotes.addEventListener('click', closeNotes);
+
+  btnPrint.addEventListener('click', function(){ window.print(); });
+  printNotesToggle.addEventListener('change', function(){
+    document.body.classList.toggle('print-with-notes', printNotesToggle.checked);
+  });
+
+  // Swipe support
+  var deck = document.getElementById('deck');
+  var touchStartX = 0, touchStartY = 0, touching = false;
+  deck.addEventListener('touchstart', function(e){
+    if(e.touches.length !== 1) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touching = true;
+  }, {passive:true});
+  deck.addEventListener('touchend', function(e){
+    if(!touching) return;
+    touching = false;
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    if(Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)){
+      if(dx < 0) goTo(index + 1); else goTo(index - 1);
+    }
+  }, {passive:true});
+
+  // Hide usage hint after a while
+  setTimeout(function(){ usageHint.style.opacity = '0'; }, 4500);
+  deck.addEventListener('click', function(){ usageHint.style.opacity = '0'; });
+
+  deck.focus();
+  render();
+})();
+</script>
+</body>
+</html>

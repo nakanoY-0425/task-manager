@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投資回収シミュレーション｜GX営業コンテンツ</title>
+<style>
+  :root{
+    --navy:#101F5A;
+    --gold:#B88A32;
+    --red:#A82024;
+    --ivory:#F7F4EC;
+    --text:#20242C;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    background:var(--ivory);
+    color:var(--text);
+    line-height:1.7;
+    padding:24px 16px 60px;
+  }
+  .wrap{max-width:920px;margin:0 auto;}
+  header.page-head{
+    border-bottom:4px solid var(--navy);
+    padding-bottom:18px;
+    margin-bottom:24px;
+  }
+  header.page-head .eyebrow{
+    color:var(--gold);
+    letter-spacing:.12em;
+    font-size:.8rem;
+    font-weight:700;
+  }
+  header.page-head h1{
+    margin:6px 0 4px;
+    color:var(--navy);
+    font-size:1.6rem;
+  }
+  header.page-head p{
+    margin:0;
+    font-size:.9rem;
+    color:#4a4f5a;
+  }
+  .disclaimer{
+    background:#fff;
+    border-left:5px solid var(--red);
+    padding:14px 18px;
+    font-size:.88rem;
+    margin-bottom:28px;
+  }
+  .disclaimer strong{color:var(--red);}
+  section{margin-bottom:34px;}
+  h2{
+    color:var(--navy);
+    font-size:1.15rem;
+    border-left:6px solid var(--gold);
+    padding-left:10px;
+    margin-bottom:14px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid #ddd4bf;
+    border-radius:6px;
+    padding:20px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+  @media(max-width:640px){
+    .grid{grid-template-columns:1fr;}
+  }
+  label{
+    display:block;
+    font-size:.85rem;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .field{margin-bottom:6px;}
+  .field .unit{font-size:.8rem;color:#666;font-weight:400;}
+  input[type=number]{
+    width:100%;
+    padding:10px 12px;
+    font-size:1rem;
+    border:1px solid #b9b2a0;
+    border-radius:4px;
+    background:#fffdf9;
+    color:var(--text);
+  }
+  input[type=number]:focus{
+    outline:2px solid var(--gold);
+    outline-offset:1px;
+  }
+  .results{
+    margin-top:24px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+  }
+  @media(max-width:760px){
+    .results{grid-template-columns:repeat(2,1fr);}
+  }
+  .result-box{
+    background:var(--navy);
+    color:#fff;
+    border-radius:6px;
+    padding:14px 12px;
+    text-align:center;
+  }
+  .result-box.gold{background:var(--gold);}
+  .result-box.red{background:var(--red);}
+  .result-box .label{
+    font-size:.72rem;
+    letter-spacing:.05em;
+    opacity:.85;
+    margin-bottom:6px;
+  }
+  .result-box .value{
+    font-size:1.35rem;
+    font-weight:700;
+  }
+  .result-box .value small{
+    font-size:.65rem;
+    font-weight:400;
+    display:block;
+    opacity:.85;
+  }
+  .formula-box{
+    background:#fff;
+    border:1px dashed #b9b2a0;
+    border-radius:6px;
+    padding:16px 18px;
+    font-size:.88rem;
+    margin-top:18px;
+  }
+  .formula-box code{
+    display:block;
+    background:var(--ivory);
+    padding:8px 10px;
+    border-radius:4px;
+    margin:6px 0 12px;
+    font-size:.86rem;
+    color:var(--navy);
+    font-weight:700;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    font-size:.9rem;
+  }
+  table caption{
+    text-align:left;
+    font-size:.85rem;
+    color:#555;
+    margin-bottom:8px;
+  }
+  th,td{
+    border:1px solid #ddd4bf;
+    padding:10px;
+    text-align:center;
+  }
+  th{
+    background:var(--navy);
+    color:#fff;
+    font-weight:700;
+  }
+  td.highlight{
+    background:#fbf2df;
+    font-weight:700;
+    color:var(--red);
+  }
+  .note{
+    font-size:.8rem;
+    color:#666;
+    margin-top:8px;
+  }
+  footer{
+    margin-top:40px;
+    border-top:2px solid var(--navy);
+    padding-top:14px;
+    font-size:.78rem;
+    color:#555;
+  }
+  .tag-warn{
+    display:inline-block;
+    background:var(--red);
+    color:#fff;
+    font-size:.72rem;
+    padding:2px 8px;
+    border-radius:3px;
+    margin-left:6px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page-head">
+    <div class="eyebrow">GX営業コンテンツ 内部営業教材</div>
+    <h1>投資回収シミュレーションツール</h1>
+    <p>約160万円の投資に対して、どの程度の件数・期間で回収の目安になるかを試算するためのツールです。</p>
+  </header>
+
+  <div class="disclaimer">
+    <strong>このツールはすべて試算です。</strong>
+    実際の売上・粗利益・成約率は、会社の状況・地域・施工体制・営業力・市場環境によって異なります。
+    ここで算出される数値は、投資回収の「考え方」を整理するための参考値であり、
+    成果を保証するものではありません。個別相談の場では、必ずこの前提を口頭でも伝えてください。
+  </div>
+
+  <section>
+    <h2>1. 基準となる3パターン（初期設定値）</h2>
+    <div class="card">
+      <table>
+        <caption>導入費用 1,600,000円を、1件あたりの追加粗利益ごとに回収するために必要な件数の目安</caption>
+        <thead>
+          <tr>
+            <th>1件あたりの追加粗利益</th>
+            <th>計算式</th>
+            <th>回収に必要な件数（目安）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>200,000円</td>
+            <td>1,600,000円 ÷ 200,000円</td>
+            <td class="highlight">8件</td>
+          </tr>
+          <tr>
+            <td>300,000円</td>
+            <td>1,600,000円 ÷ 300,000円 = 5.33…</td>
+            <td class="highlight">6件（端数切り上げ）</td>
+          </tr>
+          <tr>
+            <td>400,000円</td>
+            <td>1,600,000円 ÷ 400,000円</td>
+            <td class="highlight">4件</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">※ 端数が出る場合は、実務上の目安として件数を切り上げて表示しています。実際の粗利益単価は会社ごとに異なります。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. 御社の数値で試算する</h2>
+    <div class="card">
+      <div class="grid">
+        <div class="field">
+          <label for="cost">導入金額（円）</label>
+          <input type="number" id="cost" value="1600000" min="0" step="10000">
+        </div>
+        <div class="field">
+          <label for="offers">月間提案件数（件）<span class="unit">／1ヶ月に施主へ提案できる件数</span></label>
+          <input type="number" id="offers" value="10" min="0" step="1">
+        </div>
+        <div class="field">
+          <label for="rate">成約率（％）<span class="unit">／提案のうち成約する割合</span></label>
+          <input type="number" id="rate" value="30" min="0" max="100" step="1">
+        </div>
+        <div class="field">
+          <label for="revenuePerDeal">1件あたりの追加売上（円）<span class="unit">／GX提案により増える売上</span></label>
+          <input type="number" id="revenuePerDeal" value="800000" min="0" step="10000">
+        </div>
+        <div class="field">
+          <label for="profitPerDeal">1件あたりの追加粗利益（円）<span class="unit">／GX提案により増える粗利益</span></label>
+          <input type="number" id="profitPerDeal" value="300000" min="0" step="10000">
+        </div>
+      </div>
+
+      <div class="results" id="results">
+        <div class="result-box">
+          <div class="label">月間成約件数</div>
+          <div class="value" id="out-deals">-</div>
+        </div>
+        <div class="result-box">
+          <div class="label">月間追加売上</div>
+          <div class="value" id="out-revenue">-</div>
+        </div>
+        <div class="result-box gold">
+          <div class="label">月間追加粗利益</div>
+          <div class="value" id="out-profit">-</div>
+        </div>
+        <div class="result-box red">
+          <div class="label">回収に必要な件数</div>
+          <div class="value" id="out-needed">-</div>
+        </div>
+      </div>
+      <div class="results" style="grid-template-columns:1fr;margin-top:12px;">
+        <div class="result-box" style="background:var(--text);">
+          <div class="label">回収までの目安月数</div>
+          <div class="value" id="out-months">-</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <strong>計算式（画面表示用）</strong>
+      <code>月間成約件数 ＝ 月間提案件数 × 成約率(％) ÷ 100</code>
+      <code>月間追加売上 ＝ 月間成約件数 × 1件あたりの追加売上</code>
+      <code>月間追加粗利益 ＝ 月間成約件数 × 1件あたりの追加粗利益</code>
+      <code>回収に必要な件数 ＝ 導入金額 ÷ 1件あたりの追加粗利益（端数切り上げ）</code>
+      <code>回収までの目安月数 ＝ 回収に必要な件数 ÷ 月間成約件数</code>
+      <p class="note">月間成約件数が0の場合、回収までの月数は計算できません。すべて小数点以下は表示上四捨五入・切り上げしています。</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      本ツールの試算結果は、営業担当者が個別相談の中で投資回収の考え方を説明するための参考資料です。
+      <span class="tag-warn">成果保証ではありません</span>
+    </p>
+    <p>顧客ごとの実数値（過去の単価・粗利益・件数）は hearing-sheet.md のヒアリング結果を用いて入力してください。</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+
+  var fmtYen = function(n){
+    if (!isFinite(n)) return '-';
+    return Math.round(n).toLocaleString('ja-JP') + '円';
+  };
+  var fmtNum = function(n, digits){
+    if (!isFinite(n)) return '-';
+    var f = Math.pow(10, digits || 0);
+    return (Math.round(n * f) / f).toLocaleString('ja-JP');
+  };
+
+  function calc(){
+    var cost = parseFloat($('cost').value) || 0;
+    var offers = parseFloat($('offers').value) || 0;
+    var rate = parseFloat($('rate').value) || 0;
+    var revenuePerDeal = parseFloat($('revenuePerDeal').value) || 0;
+    var profitPerDeal = parseFloat($('profitPerDeal').value) || 0;
+
+    var deals = offers * (rate / 100);
+    var revenue = deals * revenuePerDeal;
+    var profit = deals * profitPerDeal;
+    var needed = profitPerDeal > 0 ? Math.ceil(cost / profitPerDeal) : NaN;
+    var months = (deals > 0) ? (needed / deals) : NaN;
+
+    $('out-deals').innerHTML = fmtNum(deals, 1) + '<small>件／月</small>';
+    $('out-revenue').innerHTML = fmtYen(revenue) + '<small>／月</small>';
+    $('out-profit').innerHTML = fmtYen(profit) + '<small>／月</small>';
+    $('out-needed').innerHTML = (isFinite(needed) ? fmtNum(needed,0) + '<small>件</small>' : '算出不可<small>粗利益を入力してください</small>');
+    $('out-months').innerHTML = (isFinite(months) ? fmtNum(months,1) + 'ヶ月' : '算出不可（月間成約件数が0のため）');
+  }
+
+  ['cost','offers','rate','revenuePerDeal','profitPerDeal'].forEach(function(id){
+    $(id).addEventListener('input', calc);
+  });
+
+  calc();
+})();
+</script>
+</body>
+</html>
