@@ -6,6 +6,7 @@
 
 - [`docs/sales-interview-guidelines.md`](docs/sales-interview-guidelines.md)：基本方針と分析ルール
 - [`docs/sales-consultative-manual.md`](docs/sales-consultative-manual.md)：相談型セールスの実践手順（STEP 1〜8）とトーク例
+- [`knowledge/sales/INDEX.md`](knowledge/sales/INDEX.md)：過去の面談事例の索引（ローカルのみ、存在する場合）。類似案件の分析では該当事例を参照し、索引の「事例分析の共通ルール」に従う。ただし個別顧客の情報を他の顧客に開示しない。
 
 - 基本順序「信頼関係 → 本音の理解 → 課題の明確化 → 解決策の検討 → 商品提案 → 納得した意思決定」を崩さない。
 - 面談は「変わる」か「現状維持」かを相手自身が決める場であることを、冒頭で共有し、終盤で確認する。どちらの選択も尊重する。

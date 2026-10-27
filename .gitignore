@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Sales knowledge with customer personal data (local only, never commit)
+knowledge/
