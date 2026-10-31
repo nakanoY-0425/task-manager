@@ -55,3 +55,4 @@ technical-materials/
 - `curriculum_map.md` … 作成済み（暫定）
 - `issues_for_review.md` … 作成済み
 - A講義の設計案（原本と改善案を対照表示） … `lectures/A1-neos-plus-personal-training-draft.md`に1本（No.1）のみ着手。No.2・No.7・B No.1は未着手（次の段階の作業）。
+- `youtube-video-knowledge-package.md` … 作成済み。このナレッジを外注でYouTube・動画化する際に渡す単体パッケージ（お客様向け／受講生向けの2トラックに分けて切り口を整理）。
