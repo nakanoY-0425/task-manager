@@ -56,3 +56,4 @@ technical-materials/
 - `issues_for_review.md` … 作成済み
 - A講義の設計案（原本と改善案を対照表示） … `lectures/A1-neos-plus-personal-training-draft.md`に1本（No.1）のみ着手。No.2・No.7・B No.1は未着手（次の段階の作業）。
 - `youtube-video-knowledge-package.md` … 作成済み。このナレッジを外注でYouTube・動画化する際に渡す単体パッケージ（お客様向け／受講生向けの2トラックに分けて切り口を整理）。
+- **2026-10-31追記**：裕貴さんから「情報が足りていなかった、5つあるので改めて送る」と連絡があり、追加PDFを受領開始。1本目は1-1-1・1-1-2のデザイン版（重複、新情報なし）。2本目で欠落予想していた**1-1-3「解剖学を学ぶ」No.3（82ページ）**を受領し、`source_inventory.md`・`curriculum_map.md`に反映。解剖学的な誤り2件（長腓骨筋・腹横筋の英語名／正式名称の誤記）を`issues_for_review.md`F章に追加。残り3本は受領待ち。
