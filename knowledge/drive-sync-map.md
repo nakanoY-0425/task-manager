@@ -37,6 +37,7 @@
 | knowledge/marketing-hakase-feedback.md | 1YOTIz_2PaPsic1fP3ilv7yWxLWCVMWNjpqcUi0cWi8E |
 | knowledge/osaru-insights.md | 1EqUpWj73T11-0lLzTt6Q0QEFhaYrKiQwFabs2Z21hqM |
 | knowledge/other-business-engagements.md | 1Z45LO63kgwM4FcQhbAU6YyXsv3uyuo7d5vtrTUiLdIU |
+| knowledge/sales-deck-latest.md | 1JI48UUJo4Gk6vGEZsIQWJFw5eM6JlJ0gUdB5vUV4eOM |
 | knowledge/outcome-philosophy.md | 1nsXOM4kJgrn-L4wLtZouV7_jNYM0m9PnFAey-_O-Yvw |
 | knowledge/predicted-faq.md | 1jgcwNnNK_1pptmjojMSorvir3YDa53VcHtQorjg_qOU |
 | knowledge/pricing-value-positioning-knowledge.md | 1oNuuRfr36Y09MPVmj04sjFU1EA-W30xVvSiO0Tew4UM |
@@ -78,4 +79,4 @@
 | knowledge/study-materials/chapter09.md | 1L12bFdDYWmeATAwqLxw5TmYWjRN8I7XeHmlgZdE36h0 |
 | knowledge/study-materials/chapter10.md | 1h2dY9qzjzj2z_Ams5BiG4caJGunh6T_Oh64qAdt4sWI |
 
-リポジトリにない（Googleドライブが正本の）資料：カリキュラム概要（16us48q5ylIbC4oFDCL16OeNpWi2otmeeJgF31NTdLtw）、売れるトレーナー経営者の教科書（19VbjKxaohAXwz2HKvbRdZE0_Fr6eqM_8sSyRJI6-c7k）、商品設計テンプレート（1Cv60-h69PuHRsh04NYRO2mD3NR9gZZHszNRkt0Pf4uc）、受講生ロードマップ12ヶ月版（1H0WRTtVM-mJOeFy-ruNN-MY1121PZJLY5dp0ePgbx3Y）、地上戦パートナー候補リスト（1AGWHAdYN00KFC_R4AJ-ooaz363BfUjcK75S5BzuixH8）。いずれも水流さんに編集権限あり。
+リポジトリにない（Googleドライブが正本の）資料：カリキュラム概要（16us48q5ylIbC4oFDCL16OeNpWi2otmeeJgF31NTdLtw）、売れるトレーナー経営者の教科書（19VbjKxaohAXwz2HKvbRdZE0_Fr6eqM_8sSyRJI6-c7k）、商品設計テンプレート（1Cv60-h69PuHRsh04NYRO2mD3NR9gZZHszNRkt0Pf4uc）、受講生ロードマップ12ヶ月版（1H0WRTtVM-mJOeFy-ruNN-MY1121PZJLY5dp0ePgbx3Y）、地上戦パートナー候補リスト（1AGWHAdYN00KFC_R4AJ-ooaz363BfUjcK75S5BzuixH8）、営業資料（スライド）最新版（1apveOHqHy8Q4bsau3nb8UUPrGI0x4kWULE2eyf43zAA、2026-11-15作成）。いずれも水流さんに編集権限あり。
