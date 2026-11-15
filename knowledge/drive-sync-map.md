@@ -12,6 +12,7 @@
 ## 共有フォルダ・目次
 - 共有フォルダ「トレーナー経営大学_ナレッジ共有」：https://drive.google.com/drive/folders/12RR4Usm8iaDHDl0IjdXBZ459ceJf2zm9 （水流さん＝編集者）
 - 目次スプレッドシート「00_トレーナー経営大学｜ナレッジ目次（ここから開く）」：https://docs.google.com/spreadsheets/d/1HYBwJt3v_8E4VZPvKN7d182oka8KZztv-DBZgc3qOFs/edit
+- このファイル自体のGoogleドキュメント版「共有ドライブの運用ルール・同期対応表」：16hJxmg3ow0sXo_MiWXxS2Gi17wCjr4uIophOXMXmmXs
 
 ## 対応表（リポジトリのファイル → GoogleドキュメントID）
 
