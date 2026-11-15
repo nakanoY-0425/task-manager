@@ -37,7 +37,7 @@
 | knowledge/marketing-hakase-feedback.md | 1YOTIz_2PaPsic1fP3ilv7yWxLWCVMWNjpqcUi0cWi8E |
 | knowledge/osaru-insights.md | 1EqUpWj73T11-0lLzTt6Q0QEFhaYrKiQwFabs2Z21hqM |
 | knowledge/other-business-engagements.md | 1Z45LO63kgwM4FcQhbAU6YyXsv3uyuo7d5vtrTUiLdIU |
-| knowledge/sales-deck-latest.md | 1JI48UUJo4Gk6vGEZsIQWJFw5eM6JlJ0gUdB5vUV4eOM |
+| knowledge/sales-deck-latest.md | 1N-ixlkzhSLVMKRDSgUOZReRcv0r2jeyIwWkNLyx84BA |
 | knowledge/outcome-philosophy.md | 1nsXOM4kJgrn-L4wLtZouV7_jNYM0m9PnFAey-_O-Yvw |
 | knowledge/predicted-faq.md | 1jgcwNnNK_1pptmjojMSorvir3YDa53VcHtQorjg_qOU |
 | knowledge/pricing-value-positioning-knowledge.md | 1oNuuRfr36Y09MPVmj04sjFU1EA-W30xVvSiO0Tew4UM |
