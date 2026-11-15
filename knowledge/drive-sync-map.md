@@ -62,7 +62,7 @@
 | technical-materials/youtube-video-knowledge-package.md | 1DaZ6r9zDaeQw0hh3tK79gRbPbIA2ekSKjWrNJooe-3o |
 | technical-materials/lectures/A1-neos-plus-personal-training-draft.md | 1UgOtwRzMDTeC_0OSub_O5GCjZrVaXfOVonKZvfeSWa0 |
 
-### 共有フォルダ外の既存ドキュメント（目次からリンク、水流さんへ個別に編集権限を付与済み）
+### 既存ドキュメント（2026-11-15に共有フォルダへ移動済み。以前は別の場所にあった）
 | リポジトリ | GoogleドキュメントID |
 |---|---|
 | knowledge/ground-game-marketing-knowledge.md | 1DxKZ16G1gK8Jfa8Oa9FU0RUArjhvT3OIv0LbT57At04 |
@@ -79,4 +79,6 @@
 | knowledge/study-materials/chapter09.md | 1L12bFdDYWmeATAwqLxw5TmYWjRN8I7XeHmlgZdE36h0 |
 | knowledge/study-materials/chapter10.md | 1h2dY9qzjzj2z_Ams5BiG4caJGunh6T_Oh64qAdt4sWI |
 
-リポジトリにない（Googleドライブが正本の）資料：カリキュラム概要（16us48q5ylIbC4oFDCL16OeNpWi2otmeeJgF31NTdLtw）、売れるトレーナー経営者の教科書（19VbjKxaohAXwz2HKvbRdZE0_Fr6eqM_8sSyRJI6-c7k）、商品設計テンプレート（1Cv60-h69PuHRsh04NYRO2mD3NR9gZZHszNRkt0Pf4uc）、受講生ロードマップ12ヶ月版（1H0WRTtVM-mJOeFy-ruNN-MY1121PZJLY5dp0ePgbx3Y）、地上戦パートナー候補リスト（1AGWHAdYN00KFC_R4AJ-ooaz363BfUjcK75S5BzuixH8）、営業資料（スライド）最新版（1apveOHqHy8Q4bsau3nb8UUPrGI0x4kWULE2eyf43zAA、2026-11-15作成）。いずれも水流さんに編集権限あり。
+リポジトリにない（Googleドライブが正本の）資料：カリキュラム概要（16us48q5ylIbC4oFDCL16OeNpWi2otmeeJgF31NTdLtw）、売れるトレーナー経営者の教科書（19VbjKxaohAXwz2HKvbRdZE0_Fr6eqM_8sSyRJI6-c7k）、商品設計テンプレート（1Cv60-h69PuHRsh04NYRO2mD3NR9gZZHszNRkt0Pf4uc）、受講生ロードマップ12ヶ月版（1H0WRTtVM-mJOeFy-ruNN-MY1121PZJLY5dp0ePgbx3Y）、地上戦パートナー候補リスト（1AGWHAdYN00KFC_R4AJ-ooaz363BfUjcK75S5BzuixH8）、営業資料（スライド）最新版（1apveOHqHy8Q4bsau3nb8UUPrGI0x4kWULE2eyf43zAA、2026-11-15作成）、営業資料の修正指示v2（1kWvGRW9pw047rroNOq6TE2a0oCJJJhyVDb9DGEnVdTY）、営業資料 全スライド解説（13pN89Cqlpcj3316wojxYtB6hOoj_KjdVA3-_g3jEHw4）、提出用ワークシートのテンプレート9本（IDは`submission-worksheet-templates.md`参照）。
+
+**2026-11-15：上記を含め、ナレッジ関連のGoogleドキュメント・スプレッドシートはすべて共有フォルダ「トレーナー経営大学_ナレッジ共有」の中に移動済み**（学習テキスト第0〜10章・地上戦ナレッジ・YouTube運用代行パッケージ・カリキュラム概要・教科書・商品設計テンプレート・受講生ロードマップ・地上戦パートナー候補リスト・修正指示v2・全スライド解説・ワークシート9本の計29件）。フォルダ内のファイルは水流さんに編集権限が自動で付く。フォルダ外に残っているのは、水流さん所有の元の営業資料38枚デッキ（16Lq9uWUx1Bnbp9kGqFte_7FZzqDKDQStdNE0hgY8dQs、こちらのアカウントでは移動不可）のみ。
