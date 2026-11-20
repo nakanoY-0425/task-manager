@@ -80,6 +80,7 @@
 | knowledge/study-materials/chapter08.md | 1boEqavYzr01rraHdn3Vwj-DU4O9_qOgyhxWXcnvHgkU |
 | knowledge/study-materials/chapter09.md | 1L12bFdDYWmeATAwqLxw5TmYWjRN8I7XeHmlgZdE36h0 |
 | knowledge/study-materials/chapter10.md | 1h2dY9qzjzj2z_Ams5BiG4caJGunh6T_Oh64qAdt4sWI |
+| knowledge/photo-material-catalog.md | 1m84YsQiU0FxCN5i4ws-od008d_5AdZ0-I7x2dO_KOps |
 
 リポジトリにない（Googleドライブが正本の）資料：カリキュラム概要（16us48q5ylIbC4oFDCL16OeNpWi2otmeeJgF31NTdLtw）、売れるトレーナー経営者の教科書（19VbjKxaohAXwz2HKvbRdZE0_Fr6eqM_8sSyRJI6-c7k）、商品設計テンプレート（1Cv60-h69PuHRsh04NYRO2mD3NR9gZZHszNRkt0Pf4uc）、受講生ロードマップ12ヶ月版（1H0WRTtVM-mJOeFy-ruNN-MY1121PZJLY5dp0ePgbx3Y）、地上戦パートナー候補リスト（1AGWHAdYN00KFC_R4AJ-ooaz363BfUjcK75S5BzuixH8）、営業資料（スライド）最新版（1apveOHqHy8Q4bsau3nb8UUPrGI0x4kWULE2eyf43zAA、2026-11-15作成）、営業資料の修正指示v2（1kWvGRW9pw047rroNOq6TE2a0oCJJJhyVDb9DGEnVdTY）、営業資料 全スライド解説（13pN89Cqlpcj3316wojxYtB6hOoj_KjdVA3-_g3jEHw4）、提出用ワークシートのテンプレート9本（IDは`submission-worksheet-templates.md`参照）。
 
