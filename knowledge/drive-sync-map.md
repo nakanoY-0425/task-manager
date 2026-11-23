@@ -30,7 +30,7 @@
 | knowledge/education-principles.md | 1LGOsdqJSmZkErhBlIYU0WnSr96LLDMll2eynlWlqTuc |
 | knowledge/individual-consulting-product-design.md | 1cX_s_AVmftWt5qaJQJWaNIrXoFLthH5gz6NLS0PWTrk |
 | knowledge/instagram-reel-advisor-feedback.md | 1Qkdiq8oR7aQmBLcTELVTSw-rDcguVvtegVMycLW4oMM |
-| knowledge/ground-game-x-instagram-integrated-knowledge.md | 1mdJjK0Ptx4E0Fki7EnKcrH3CU1q3lfo-vmPSaKAMiRI |
+| knowledge/ground-game-x-instagram-integrated-knowledge.md | 1fWs1sRWL5Xlyq1JENJVJmxAeEnlooRafuq7doAwUuy0 |
 | knowledge/slack-community-qa-knowledge.md | 1D1G2WUz7VrRKuu5JyyTvSdSJy1p-MfjtnNqH7Tyt1Jg |
 | knowledge/intangible-product-design-knowledge.md | 1dPQIUcOZW0BQ8GP9JFNTH9T5AILB2byBB7NDKIhXNtE |
 | knowledge/lp-consulting-knowledge.md | 1hj-foI1rMcz1d34CsuHTePBnuSYlvfTgFO5ImWEIk2U |
