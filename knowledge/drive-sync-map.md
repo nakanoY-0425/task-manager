@@ -32,6 +32,7 @@
 | knowledge/instagram-reel-advisor-feedback.md | 1Qkdiq8oR7aQmBLcTELVTSw-rDcguVvtegVMycLW4oMM |
 | knowledge/ground-game-x-instagram-integrated-knowledge.md | 1fWs1sRWL5Xlyq1JENJVJmxAeEnlooRafuq7doAwUuy0 |
 | knowledge/course-sales-future-strategy.md | 1fQ1d_o2UEx2AfcMYUcT2jUSVcWWi-S3v_8YBwDRZjLA |
+| knowledge/systematization-framework.md | 1LG3lAtgaIhKfCWUTpx9ofMHZMAqCxaKba54Io3jBHf0 |
 | knowledge/slack-community-qa-knowledge.md | 1D1G2WUz7VrRKuu5JyyTvSdSJy1p-MfjtnNqH7Tyt1Jg |
 | knowledge/intangible-product-design-knowledge.md | 1dPQIUcOZW0BQ8GP9JFNTH9T5AILB2byBB7NDKIhXNtE |
 | knowledge/lp-consulting-knowledge.md | 1hj-foI1rMcz1d34CsuHTePBnuSYlvfTgFO5ImWEIk2U |
